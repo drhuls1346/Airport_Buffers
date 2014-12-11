@@ -5,6 +5,12 @@ from rest_framework_gis import serializers as geoserializers
 
 class AirportSerializer(geoserializers.GeoFeatureModelSerializer):
     class Meta:
-        model = models.Airport
+        model = models.Airports
         geo_field = 'geom'
-        fields = ('id','name')
+        fields = ('name', 'city', 'faa')
+
+class CampusesSerializer(geoserializers.GeoFeatureModelSerializer):
+    class Meta:
+        model = models.Campuses
+        geo_field = 'geom'
+        fields = ('name')
